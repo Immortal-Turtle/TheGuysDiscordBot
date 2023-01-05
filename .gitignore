@@ -1,2 +1,4 @@
 #ignore the modules
 node_modules/
+.env
+*ServerStatus.txt
