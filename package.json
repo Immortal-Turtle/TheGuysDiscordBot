@@ -1,0 +1,25 @@
+{
+  "name": "the-guys-discord-bot",
+  "version": "0.0.1",
+  "description": "Discord bot for The Guys discord server",
+  "main": "index.js",
+  "scripts": {
+    "test": "serverStatus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Immortal-Turtle/TheGuysDiscordBot.git"
+  },
+  "author": "Casper Co",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Immortal-Turtle/TheGuysDiscordBot/issues"
+  },
+  "homepage": "https://github.com/Immortal-Turtle/TheGuysDiscordBot#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0"
+  }
+}
