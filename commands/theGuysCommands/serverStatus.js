@@ -24,7 +24,6 @@ module.exports = {
 
         fs.readFile(filePath, async (err, serverStatus) => {
             if (err) throw err;
-            console.log(serverStatus);
             await interaction.reply({ content: `The ${servername} server is currently ${serverStatus}`, ephemeral: false });
         });
     },
