@@ -4,6 +4,8 @@ const path = require('node:path');
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const logger = require('./utils/logger');
 
+process.title = 'The Guys Discord Bot'
+
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.commands = new Collection();
