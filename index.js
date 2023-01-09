@@ -10,11 +10,26 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.commands = new Collection();
 
-const commandsPath = path.join(__dirname, 'commands');
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+const th5CommandsPath = path.join(__dirname, 'commands/th5Commands');
+const th5CommandFiles = fs.readdirSync(th5CommandsPath).filter(file => file.endsWith('.js'));
 
-for (const file of commandFiles){
-    const filePath = path.join(commandsPath, file);
+for (const file of th5CommandFiles){
+    const filePath = path.join(th5CommandsPath, file);
+    const command = require(filePath);
+
+    // Set a new item in the Collection with the key as the command name and the value as the exported module
+    if ('data' in command && 'execute' in command) {
+        client.commands.set(command.data.name, command);
+    } else {
+        logger.warn(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+    }
+}
+
+const theGuysCommandsPath = path.join(__dirname, 'commands/theGuysCommands');
+const theGuysCommandFiles = fs.readdirSync(theGuysCommandsPath).filter(file => file.endsWith('.js'));
+
+for (const file of theGuysCommandFiles){
+    const filePath = path.join(theGuysCommandsPath, file);
     const command = require(filePath);
 
     // Set a new item in the Collection with the key as the command name and the value as the exported module
