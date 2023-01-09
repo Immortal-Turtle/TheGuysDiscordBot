@@ -37,3 +37,5 @@ for (const file of eventFiles){
 }
 
 client.login(process.env.DISCORD_TOKEN);
+
+fs.writeFile('./bot_info.txt', `pid ${process.pid}`);
