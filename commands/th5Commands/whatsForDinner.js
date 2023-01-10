@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 
-const foodOptions = [ 'Chinese food', 'Sushi', 'Ramen', 'Burgers', 'Fried Chicken', 'Pizza', 'Vietnamese food', 'Other food' ];
+const foodOptions = [ 'Chinese food', 'Sushi', 'Ramen', 'Burgers', 'Fried Chicken', 'Pizza', 'Vietnamese food', 'Other food', 'Pasta' ];
 
 module.exports = {
     data: new SlashCommandBuilder()
